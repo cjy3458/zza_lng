@@ -1,3 +1,4 @@
+import Layout from './common/Layout';
 import CountingStars from '/img/CountingStars.jpg';
 import styled from 'styled-components';
 // import NavBar from './NavBar';
@@ -6,7 +7,7 @@ const Portfolio = () => {
 	return (
 		<Layout>
 			<Wrapper>
-				<div>ㅇㅇ</div>
+				<div>진행중...</div>
 			</Wrapper>
 		</Layout>
 	);

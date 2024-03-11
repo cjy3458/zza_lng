@@ -18,12 +18,12 @@ const Landing = () => {
 	const onClick2 = () => {
 		if (click) {
 			setClick2(true);
-			// setTimeout(() => {
-			// 	navigate('/portfolio');
-			// }, 1400);
 			setTimeout(() => {
-				window.location.href = 'https://zza-lng.notion.site/Portfolio-31eae55098f94e95a5fb573d0c74d9c5?pvs=4';
+				navigate('/portfolio');
 			}, 1400);
+			// setTimeout(() => {
+			// 	window.location.href = 'https://zza-lng.notion.site/Portfolio-31eae55098f94e95a5fb573d0c74d9c5?pvs=4';
+			// }, 1400);
 		} else return;
 	};
 

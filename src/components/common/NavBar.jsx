@@ -52,5 +52,5 @@ const ButtonWrapper = styled.div`
 	justify-content: center;
 	cursor: pointer;
 	align-items: center;
-	padding: 1.5rem;
+	/* padding: 1.5rem; */
 `;

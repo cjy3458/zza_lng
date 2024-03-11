@@ -9,7 +9,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path="/" element={<Landing />} />
-				<Route path="/portfolio" element={<PortfolioPage click={true} />} />
+				<Route path="/portfolio" element={<PortfolioPage />} />
 			</Routes>
 		</>
 	);
