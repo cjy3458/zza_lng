@@ -1,10 +1,12 @@
 import Landing from '../components/Landing';
+import NewLanding from '../components/NewLanding';
 import NavBar from '../components/common/NavBar';
 
 const LandingPage = () => {
 	return (
 		<>
-			<Landing />
+			{/* <Landing /> */}
+			<NewLanding />
 		</>
 	);
 };
