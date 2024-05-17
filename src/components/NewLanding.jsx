@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './newLanding.css'; // CSS 파일 경로 확인 필요
 import styled from 'styled-components';
 
 function CardComponent() {
@@ -56,23 +55,23 @@ function CardComponent() {
 
 	return (
 		<Wrapper className={`${click ? 'white' : ''}`}>
-			<div className="container" ref={containerRef}>
-				<div className="card" style={style}>
-					<div className="item">
-						<img src="/img/image.png" alt="profile" />
-					</div>
-					<div className="info">
+			<Container ref={containerRef}>
+				<Card className={`${click ? 'white' : ''}`} style={style}>
+					<Item>
+						<ItemImage src="/img/image.png" alt="profile" />
+					</Item>
+					<Info>
 						<h2 className="title" style={{ transform: 'translateZ(150px)' }}>
 							최재영
 						</h2>
 						<h3 style={{ transform: 'translateZ(125px)' }}>FE Dev.</h3>
 						<div>🔨헤헤 안녕하세용🔨</div>
-						<div className="purchase" style={{ transform: 'translateZ(75px)' }}>
+						<Purchase style={{ transform: 'translateZ(75px)' }}>
 							<button onClick={onClick}>Click!</button>
-						</div>
-					</div>
-				</div>
-			</div>
+						</Purchase>
+					</Info>
+				</Card>
+			</Container>
 		</Wrapper>
 	);
 }
@@ -81,14 +80,85 @@ export default CardComponent;
 
 const Wrapper = styled.div`
 	display: flex;
-	width: 100%;
+	width: 10000px;
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
-	/* background-color: black; */
+	background-color: black;
 	align-content: center;
 	font-family: 'Oleo Script', cursive;
+	transition: background-color 2s ease;
 	&.white {
 		background-color: white;
+	}
+`;
+
+const Container = styled.div`
+	width: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+const Card = styled.div`
+	width: 30rem;
+	border-radius: 30px;
+	padding: 0rem 5rem;
+	background-color: white;
+	color: black;
+	box-shadow: 0 30px 30px rgba(255, 255, 255, 0.5), 0 0 100px rgba(255, 255, 255, 0.5);
+	transform-style: preserve-3d;
+	transition: all 0.1s ease, all 0.3s ease;
+	&.white {
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0s 1s, opacity 1s linear !important;
+	}
+`;
+
+const Item = styled.div`
+	min-height: 35vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+const ItemImage = styled.img`
+	margin-top: 1.5rem;
+	width: 12rem;
+	z-index: 2;
+	transition: all 0.75s ease-out;
+	border-radius: 10rem;
+`;
+
+const Info = styled.div`
+	h2 {
+		font-size: 2rem;
+	}
+	h3 {
+		font-size: 1.3rem;
+		color: #585858;
+		font-weight: lighter;
+		transition: all 0.75s ease-out;
+	}
+`;
+
+const Purchase = styled.div`
+	margin: 3rem 0;
+	button {
+		width: 100%;
+		padding: 1rem 0rem;
+		background: #000;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 30px;
+		font-weight: bolder;
+		&:hover {
+			background: grey;
+			border: 2px solid black;
+			color: black;
+			transition: all 0.75s ease-out;
+		}
 	}
 `;
