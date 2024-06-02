@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import { getData, getGuest } from '../apis/test';
 
 function CardComponent() {
 	const containerRef = useRef(null);
@@ -16,6 +17,11 @@ function CardComponent() {
 		} else return;
 	};
 	useEffect(() => {
+		// const getUser = async () => {
+		// 	const result = await getGuest();
+		// 	return result;
+		// };
+		// getUser();
 		const card = containerRef.current;
 
 		const handleMouseMove = (e) => {
@@ -58,7 +64,8 @@ function CardComponent() {
 			<Container ref={containerRef}>
 				<Card className={`${click ? 'white' : ''}`} style={style}>
 					<Item>
-						<ItemImage src="/img/image.png" alt="profile" />
+						<ItemImage src="https://velog.velcdn.com/images%2Foneook%2Fpost%2Fc2fa087b-f651-4ea8-9ec7-718ffd7f1fd4%2Fload-screen-ui-element.gif" />
+						{/* <ItemImage src="/img/image.png" alt="profile" /> */}
 					</Item>
 					<Info>
 						<h2 className="title" style={{ transform: 'translateZ(150px)' }}>
@@ -67,7 +74,10 @@ function CardComponent() {
 						<h3 style={{ transform: 'translateZ(125px)' }}>FE Dev.</h3>
 						<div>🔨헤헤 안녕하세용🔨</div>
 						<Purchase style={{ transform: 'translateZ(75px)' }}>
-							<button onClick={onClick}>Click!</button>
+							<button onClick={onClick} className="custom-btn btn-12">
+								<span>Click!</span>
+								<span>Read More</span>
+							</button>
 						</Purchase>
 					</Info>
 				</Card>
@@ -146,7 +156,70 @@ const Info = styled.div`
 const Purchase = styled.div`
 	margin: 3rem 0;
 	button {
-		width: 100%;
+		width: 200px;
+		height: 40px;
+		padding: 10px 25px;
+		border: 2px solid #000;
+		font-family: 'Lato', sans-serif;
+		font-weight: 500;
+		background: transparent;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		position: relative;
+		display: inline-block;
+		position: relative;
+		right: 20px;
+		bottom: 20px;
+		border: none;
+		width: 130px;
+		height: 40px;
+		line-height: 40px;
+		-webkit-perspective: 230px;
+		perspective: 230px;
+		span {
+			display: block;
+			position: absolute;
+			width: 190px;
+			height: 40px;
+			border: 2px solid #000;
+			margin: 0;
+			text-align: center;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-transition: all 1.3s;
+			transition: all 1.3s;
+		}
+		span:nth-child(1) {
+			box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+			-webkit-transform: rotateX(90deg);
+			-moz-transform: rotateX(90deg);
+			transform: rotateX(90deg);
+			-webkit-transform-origin: 50% 50% -20px;
+			-moz-transform-origin: 50% 50% -20px;
+			transform-origin: 50% 50% -20px;
+		}
+		span:nth-child(2) {
+			-webkit-transform: rotateX(0deg);
+			-moz-transform: rotateX(0deg);
+			transform: rotateX(0deg);
+			-webkit-transform-origin: 50% 50% -20px;
+			-moz-transform-origin: 50% 50% -20px;
+			transform-origin: 50% 50% -20px;
+		}
+		&:hover span:nth-child(1) {
+			-webkit-transform: rotateX(0deg);
+			-moz-transform: rotateX(0deg);
+			transform: rotateX(0deg);
+		}
+		&:hover span:nth-child(2) {
+			background: #e0e5ec;
+			color: #e0e5ec;
+			-webkit-transform: rotateX(-90deg);
+			-moz-transform: rotateX(-90deg);
+			transform: rotateX(-90deg);
+		}
+		/* width: 100%;
 		padding: 1rem 0rem;
 		background: #000;
 		border: none;
@@ -159,6 +232,6 @@ const Purchase = styled.div`
 			border: 2px solid black;
 			color: black;
 			transition: all 0.75s ease-out;
-		}
+		} */
 	}
 `;
