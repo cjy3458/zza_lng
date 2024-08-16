@@ -8,30 +8,32 @@ const Landing = () => {
 	const [click, setClick] = useState(false);
 	const [click2, setClick2] = useState(false);
 
+	const handleCubeClick = () => {
+		if (click) {
+			onClick2();
+		} else {
+			onClick();
+		}
+	};
+
 	const onClick = () => {
 		setClick(true);
-		// setTimeout(() => {
-		// 	navigate('/portfolio');
-		// }, 5000);
 	};
 
 	const onClick2 = () => {
-		if (click) {
-			setClick2(true);
-			// setTimeout(() => {
-			// 	navigate('/portfolio');
-			// }, 1400);
-			setTimeout(() => {
-				window.location.href = 'https://zza-lng.notion.site/31eae55098f94e95a5fb573d0c74d9c5';
-			}, 1400);
-		} else return;
+		setClick2(true);
+		setTimeout(() => {
+			window.location.href = 'https://zza-lng.notion.site/31eae55098f94e95a5fb573d0c74d9c5';
+		}, 2000);
 	};
+	console.log(click);
+	console.log(click2);
 
 	return (
 		<>
 			<Wrapper className={`${click2 ? 'white' : ''}`}>
-				<Container onClick={onClick2}>
-					<Cube onClick={onClick}>
+				<Container>
+					<Cube onClick={handleCubeClick}>
 						<div className={`cube-face cube-face-front ${click ? 'clicked' : ''} ${click2 ? 'clicked2' : ''}`}></div>
 						<div className={`cube-face cube-face-back ${click ? 'clicked' : ''} ${click2 ? 'clicked2' : ''}`}></div>
 						<div className={`cube-face cube-face-right ${click ? 'clicked' : ''} ${click2 ? 'clicked2' : ''}`}></div>
@@ -40,7 +42,6 @@ const Landing = () => {
 						<div className={`cube-face cube-face-bottom ${click ? 'clicked' : ''} ${click2 ? 'clicked2' : ''}`}></div>
 					</Cube>
 				</Container>
-				{/* <img src="/img/Logo.png" /> */}
 			</Wrapper>
 		</>
 	);
@@ -54,15 +55,12 @@ const Wrapper = styled.div`
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
-	background-color: black;
 	align-content: center;
 	font-family: 'Oleo Script', cursive;
+	background-color: black;
 	transition: background-color 2s ease;
 	&.white {
 		background-color: white;
-	}
-	img {
-		width: 12rem;
 	}
 `;
 
@@ -73,7 +71,6 @@ const Container = styled.div`
 	width: 200px;
 	height: 200px;
 	box-sizing: border-box;
-	/* background-color: white; */
 	cursor: pointer;
 `;
 
