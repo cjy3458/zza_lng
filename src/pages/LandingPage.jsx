@@ -5,8 +5,8 @@ import NavBar from '../components/common/NavBar';
 const LandingPage = () => {
 	return (
 		<>
-			{/* <Landing /> */}
-			<NewLanding />
+			<Landing />
+			{/* <NewLanding /> */}
 		</>
 	);
 };

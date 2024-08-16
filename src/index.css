@@ -1,25 +1,25 @@
 html {
-    -webkit-text-size-adjust​: ​none​;
-    width: 100%;
-    margin: 0;
-    overflow: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 65px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  
-  html::-webkit-scrollbar {
-    display: none;
-  }
-  
-  body {
-    margin: 0;
-    /* padding: 0; */
-    /* 드래그 방지 */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    font-family: "SUIT-Regular";
-  }
+  -webkit-text-size-adjust​: ​none​;
+  width: 100%;
+  margin: 0;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 65px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  /* padding: 0; */
+  /* 드래그 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "SUIT-Regular";
+}

@@ -1,4 +1,5 @@
 import Layout from './common/Layout';
+import CountingStars from '/img/CountingStars.jpg';
 import styled from 'styled-components';
 // import NavBar from './NavBar';
 
