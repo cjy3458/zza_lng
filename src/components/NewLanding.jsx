@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import { getData, getGuest } from '../apis/test';
 
 function CardComponent() {
 	const containerRef = useRef(null);
@@ -17,11 +16,6 @@ function CardComponent() {
 		} else return;
 	};
 	useEffect(() => {
-		// const getUser = async () => {
-		// 	const result = await getGuest();
-		// 	return result;
-		// };
-		// getUser();
 		const card = containerRef.current;
 
 		const handleMouseMove = (e) => {
@@ -94,7 +88,7 @@ const Wrapper = styled.div`
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
-	background-color: black;
+	/* background-color: black; */
 	align-content: center;
 	font-family: 'Oleo Script', cursive;
 	transition: background-color 2s ease;
@@ -134,6 +128,10 @@ const Item = styled.div`
 `;
 
 const ItemImage = styled.img`
+	min-height: 35vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-top: 1.5rem;
 	width: 12rem;
 	z-index: 2;
@@ -164,7 +162,8 @@ const Purchase = styled.div`
 		font-weight: 500;
 		background: transparent;
 		cursor: pointer;
-		transition: all 0.3s ease;
+		transition: all 0.98s ease-out;
+		-webkit-transition: all 0.98s ease-out;
 		position: relative;
 		display: inline-block;
 		position: relative;
@@ -233,5 +232,26 @@ const Purchase = styled.div`
 			color: black;
 			transition: all 0.75s ease-out;
 		} */
+	}
+`;
+
+const Options = styled.div`
+	display: flex;
+	justify-content: space-between;
+	transition: all 0.75s ease-out;
+	-webkit-transition: all 0.75s ease-out;
+	button {
+		padding: 0.5rem 1.5rem;
+		background: none;
+		border: none;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		border-radius: 30px;
+		cursor: pointer;
+		font-weight: bold;
+		color: #585858;
+		&.active {
+			background: #585858;
+			color: #fff;
+		}
 	}
 `;
